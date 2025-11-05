@@ -14,7 +14,7 @@ function HeroSection() {
             <div className='hero-left'>
                 <h3>Payments for machines</h3>
                 <h1>Tap to pay with PayNet</h1>
-                <p>PayNet is a payment protocol for HTTPS payments. This project enables PayNet over WiFi with tap to pay. Accept USDC payments from mobile and web apps using your existing WiFi network, no Bluetooth pairing required.</p>
+                <p>PayNet is a payment protocol for HTTPS payments. This project enables PayNet over WiFi with tap to pay. Accept USDC payments from mobile and web apps using your existing WiFi network.</p>
 
                 <div className='hero-buttons'>
                 <a href='/app' className='hero-btn hero-btn-white'>Launch App</a>
@@ -24,6 +24,7 @@ function HeroSection() {
             </div>
 
             <div className='hero-right'>
+        
                 <img src='/images/hero-img.png'/>
             </div>
         </div>

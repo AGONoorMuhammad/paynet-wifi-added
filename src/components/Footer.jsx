@@ -16,9 +16,9 @@ function Footer() {
           {/* Column 1: x4 Pay */}
           <div className='footer-column footer-x4pay-column'>
             <h3 className='footer-column-title'>x4 Pay</h3>
-            <p className='footer-description'>Open source Bluetooth crypto payments for ESP32 devices</p>
+            <p className='footer-description'>Open source WIFI crypto payments for ESP8266 devices</p>
             <div className='footer-social'>
-              <a href='#' className='footer-social-icon' aria-label='X (Twitter)'>
+              <a href='https://x.com/PayNet_sol' target='_blank' rel='noopener noreferrer' className='footer-social-icon' aria-label='X (Twitter)'>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                 </svg>
@@ -74,7 +74,7 @@ function Footer() {
             © 2025 x4 Pay. All rights reserved. Built with <span className='footer-heart'>❤️</span> for the crypto community.
           </p>
           <p className='footer-tech'>
-            ESP32 • Bluetooth • x402 • Base Network
+           ESP8266 • WIFI • x402 • Base Network
           </p>
         </div>
       </div>

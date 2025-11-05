@@ -298,6 +298,7 @@ body::-webkit-scrollbar {
         .hero-section {
             min-height: 110vh;
             padding-top: 80px;
+            padding-bottom: 3rem;
         }
     }
     
@@ -313,7 +314,8 @@ body::-webkit-scrollbar {
         .hero-container {
             flex-direction: column;
             padding: 2rem 1rem;
-            gap: 2rem;
+            padding-bottom: 3rem;
+            gap: 0;
             align-items: flex-start;
             min-height: auto;
             justify-content: space-between;
@@ -423,6 +425,7 @@ body::-webkit-scrollbar {
             justify-content: center;
             order: 2;
             margin-top: auto;
+            margin-bottom: 0;
             align-self: center;
         }
     }
