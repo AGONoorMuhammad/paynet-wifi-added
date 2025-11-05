@@ -18,12 +18,23 @@ function HomePage() {
   useEffect(() => {
     // If we have a scrollTo state from navigation, scroll to that section
     if (location.state?.scrollTo) {
+      // First scroll to top
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      // Wait for DOM to update, then scroll to section
       setTimeout(() => {
         const element = document.getElementById(location.state.scrollTo);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Account for navbar height
+          const navbarHeight = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         }
-      }, 100);
+      }, 200);
     }
   }, [location]);
 

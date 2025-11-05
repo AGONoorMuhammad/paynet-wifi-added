@@ -18,19 +18,26 @@ function NavBar() {
     // If we're not on the home page, navigate there first with state
     if (location.pathname !== '/') {
       navigate('/', { state: { scrollTo: sectionId } });
-      // Wait for navigation to complete, then scroll
+      // The HomePage component will handle scrolling via useEffect
+    } else {
+      // If we're already on home page, scroll to section
+      // First scroll to top to ensure we're at the beginning
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      // Then scroll to the section after a small delay
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Account for navbar height
+          const navbarHeight = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         }
-      }, 300);
-    } else {
-      // If we're already on home page, just scroll
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      }, 50);
     }
     closeMenu();
   };
@@ -40,8 +47,8 @@ function NavBar() {
       <nav className='px-4 py-4 navbar-mobile-wrapper'>
         <div className='max-w-7xl mx-auto flex justify-between'>
           
-          <div className='flex-start'>
-              <img src='/images/nav-logo.png'/>
+          <div className='flex-start' style={{ cursor: 'pointer' }} onClick={() => scrollToSection('home')}>
+              <img src='/images/nav-logo.png' alt='PayNet Logo'/>
               <h1>ayNet</h1>
           </div>
 
@@ -55,7 +62,9 @@ function NavBar() {
           </div>
 
           <div className='flex-end navbar-end navbar-desktop-menu'>
-              <a href='/app' className='launch-btn'>Launch App</a>
+              {location.pathname !== '/app' && (
+                <a href='/app' className='launch-btn'>Launch App</a>
+              )}
               <a href='#' className='x-logo'>
               <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"></path></svg>
               </a>
@@ -82,7 +91,9 @@ function NavBar() {
           <a href='#performance' onClick={(e) => { e.preventDefault(); scrollToSection('performance'); }}>Performance</a>
           <a href='#tokenomics' onClick={(e) => { e.preventDefault(); scrollToSection('tokenomics'); }}>Tokenomics</a>
           <a href='#faq' onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}>FAQ</a>
-          <a href='/app' className='mobile-launch-btn' onClick={closeMenu}>Launch App</a>
+          {location.pathname !== '/app' && (
+            <a href='/app' className='mobile-launch-btn' onClick={closeMenu}>Launch App</a>
+          )}
           <a href='#' className='mobile-x-logo' onClick={closeMenu}>
             <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"></path></svg>
           </a>

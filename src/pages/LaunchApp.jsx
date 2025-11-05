@@ -1,5 +1,7 @@
 
 import React, { useState, useEffect } from "react";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 
 
@@ -22,7 +24,7 @@ if (!document.getElementById(styleTagId)) {
 
   .launch-shell{
     max-width:420px;
-    margin:24px auto;
+    margin:44px auto 24px auto;
     background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
     border-radius:24px;
     border:1px solid rgba(255,255,255,0.08);
@@ -879,7 +881,10 @@ export default function LaunchApp() {
   };
 
   return (
-    <div className="launch-shell" role="region" aria-label="Choose Amount and recipient">
+    <>
+      <NavBar />
+      <br/> <br/> <br/>
+      <div className="launch-shell" role="region" aria-label="Choose Amount and recipient">
       <div className="top-pill">Choose Amount and recipient</div>
 
       <div className="form-area">
@@ -1229,5 +1234,7 @@ export default function LaunchApp() {
         </div>
       )}
     </div>
+    <Footer />
+    </>
   );
 }

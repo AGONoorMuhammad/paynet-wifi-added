@@ -316,6 +316,8 @@ body::-webkit-scrollbar {
             gap: 2rem;
             align-items: flex-start;
             min-height: auto;
+            justify-content: space-between;
+            height: 100%;
         }
     }
     
@@ -336,19 +338,35 @@ body::-webkit-scrollbar {
         @apply text-light-gray uppercase text-sm mb-4 font-roboto;
     }
     
+    @media (max-width: 768px) {
+        .hero-left h3 {
+            font-size: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+    }
+    
     .hero-left h1 {
         @apply text-white text-5xl font-bold mb-6 font-spartan;
     }
     
     @media (max-width: 768px) {
         .hero-left h1 {
-            font-size: 2rem;
+            font-size: 1.75rem;
             line-height: 1.2;
+            margin-bottom: 1rem;
         }
     }
     
     .hero-left p {
         @apply text-white mb-8 font-roboto max-w-2xl;
+    }
+    
+    @media (max-width: 768px) {
+        .hero-left p {
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
     }
     
     .hero-buttons {
@@ -404,6 +422,8 @@ body::-webkit-scrollbar {
             height: auto;
             justify-content: center;
             order: 2;
+            margin-top: auto;
+            align-self: center;
         }
     }
     
@@ -461,20 +481,30 @@ body::-webkit-scrollbar {
     
     .card-component {
         @apply rounded-xl p-6 border-[1px];
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+    
+    .card-component:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.2);
     }
     
     .card-component h1 {
-        @apply text-xl font-bold mb-3 font-roboto;
+        @apply text-xl font-bold mb-3 font-spartan;
+        letter-spacing: 0.5px;
     }
     
     .card-component p {
         @apply text-sm font-roboto;
+        line-height: 1.7;
     }
     
     @media (max-width: 768px) {
         .card-component {
             padding: 1.5rem;
-            min-height: 23vh;
+            min-height: auto;
         }
         
         .card-component h1 {
@@ -483,7 +513,8 @@ body::-webkit-scrollbar {
         }
         
         .card-component p {
-            font-size: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
     }
     
@@ -905,6 +936,78 @@ body::-webkit-scrollbar {
     }
     
     .footer-list li {
+        @apply mb-3;
+    }
+    
+    /* All footer columns centered on mobile and desktop */
+    .footer-x4pay-column,
+    .footer-resources-column,
+    .footer-downloads-column,
+    .footer-legal-column {
+        @apply items-center;
+    }
+    
+    /* x4 Pay column - center title, description, and social icon */
+    .footer-x4pay-column .footer-column-title {
+        @apply text-center;
+    }
+    
+    .footer-x4pay-column .footer-description {
+        @apply text-center;
+    }
+    
+    .footer-x4pay-column .footer-social {
+        @apply justify-center;
+    }
+    
+    /* Resources column - center title and list items */
+    .footer-resources-column .footer-column-title {
+        @apply text-center;
+    }
+    
+    .footer-resources-list {
+        @apply flex flex-col items-center;
+    }
+    
+    .footer-resources-list li {
+        @apply mb-3 text-center;
+    }
+    
+    .footer-resources-list li .footer-muted-text {
+        @apply justify-center;
+    }
+    
+    /* Downloads column - center title and list items */
+    .footer-downloads-column .footer-column-title {
+        @apply text-center;
+    }
+    
+    .footer-downloads-list {
+        @apply flex flex-col items-center;
+    }
+    
+    .footer-downloads-list li {
+        @apply mb-3 text-center;
+    }
+    
+    .footer-downloads-list li a {
+        @apply justify-center;
+    }
+    
+    .footer-downloads-list li .footer-muted-text {
+        @apply justify-center;
+    }
+    
+    /* Legal column - center title and list items */
+    .footer-legal-column .footer-column-title {
+        @apply text-center;
+    }
+    
+    .footer-legal-list {
+        @apply flex flex-col items-center;
+    }
+    
+    .footer-legal-list li {
         @apply mb-3;
     }
     

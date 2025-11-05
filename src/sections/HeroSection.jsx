@@ -13,8 +13,8 @@ function HeroSection() {
         <div className='hero-container'>
             <div className='hero-left'>
                 <h3>Payments for machines</h3>
-                <h1>Tap to pay with x402</h1>
-                <p>x402 is a payment protocol for HTTPS payments. This project enables x402 over Bluetooth (BLE) with tap to pay. The Arduino libraries let you accept USDC payments from mobile and web apps using Bluetooth (BLE). All code is open source.</p>
+                <h1>Tap to pay with PayNet</h1>
+                <p>PayNet is a payment protocol for HTTPS payments. This project enables PayNet over WiFi with tap to pay. Accept USDC payments from mobile and web apps using your existing WiFi network, no Bluetooth pairing required.</p>
 
                 <div className='hero-buttons'>
                 <a href='/app' className='hero-btn hero-btn-white'>Launch App</a>

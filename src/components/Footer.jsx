@@ -14,7 +14,7 @@ function Footer() {
       <div className='footer-container'>
         <div className='footer-columns'>
           {/* Column 1: x4 Pay */}
-          <div className='footer-column'>
+          <div className='footer-column footer-x4pay-column'>
             <h3 className='footer-column-title'>x4 Pay</h3>
             <p className='footer-description'>Open source Bluetooth crypto payments for ESP32 devices</p>
             <div className='footer-social'>
@@ -27,9 +27,9 @@ function Footer() {
           </div>
 
           {/* Column 2: Resources */}
-          <div className='footer-column'>
+          <div className='footer-column footer-resources-column'>
             <h3 className='footer-column-title'>Resources</h3>
-            <ul className='footer-list'>
+            <ul className='footer-list footer-resources-list'>
               <li><span className='footer-muted-text'>Documentation <span className='coming-soon'>(Coming Soon)</span></span></li>
               <li><span className='footer-muted-text'>DIY Tutorials <span className='coming-soon'>(Coming Soon)</span></span></li>
               <li><span className='footer-muted-text'>Technical Specs <span className='coming-soon'>(Coming Soon)</span></span></li>
@@ -38,9 +38,9 @@ function Footer() {
           </div>
 
           {/* Column 3: Downloads */}
-          <div className='footer-column'>
+          <div className='footer-column footer-downloads-column'>
             <h3 className='footer-column-title'>Downloads</h3>
-            <ul className='footer-list'>
+            <ul className='footer-list footer-downloads-list'>
               <li>
                 <a href='#'>
                   <svg className='footer-download-icon' width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -56,9 +56,9 @@ function Footer() {
           </div>
 
           {/* Column 4: Legal */}
-          <div className='footer-column'>
+          <div className='footer-column footer-legal-column'>
             <h3 className='footer-column-title'>Legal</h3>
-            <ul className='footer-list'>
+            <ul className='footer-list footer-legal-list'>
               <li><Link to="/privacy-policy" onClick={() => handleLegalLinkClick('/privacy-policy')}>Privacy Policy</Link></li>
               <li><Link to="/terms-of-service" onClick={() => handleLegalLinkClick('/terms-of-service')}>Terms of Service</Link></li>
             </ul>

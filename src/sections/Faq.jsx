@@ -5,40 +5,40 @@ function Faq() {
 
   const faqs = [
     {
-      question: 'What is x402?',
-      answer: 'TEst'
+      question: 'What is PayNet?',
+      answer: 'PayNet is a WiFi-based payment protocol for devices. ESP8266 hosts an HTTP endpoint; mobile and web apps connect over local WiFi to initiate and verify USDC payments via the PayNet facilitator API.'
     },
     {
       question: 'What chains are supported?',
-      answer: ''
+      answer: 'Currently Base Sepolia (testnet) for development. Mainnet support and additional networks are planned.'
     },
     {
       question: 'Does it work offline?',
-      answer: 'Yes—device discovery, configuration, and payment signing are offline via BLE. The mobile app sends transactions offline Devices verify & settle payments via x4pay.org facilitator API.'
+      answer: 'Local device discovery and configuration can work on a LAN without internet. Payment verification requires internet access to reach the PayNet facilitator API and submit transactions.'
     },
     {
       question: 'What advanced features are supported?',
-      answer: ''
+      answer: 'Configurable payment requests, signed transaction exchange over HTTP, webhook callbacks, and device-friendly payloads. Roadmap includes multi-asset support and vendor analytics.'
     },
     {
       question: 'How secure is the mobile wallet?',
-      answer: ''
+      answer: 'Private keys remain on the user device. Transactions are signed client-side; the ESP8266 never sees user keys. TLS and nonce-based payloads mitigate replay and tampering risks.'
     },
     {
-      question: 'Which browsers support Web Bluetooth?',
-      answer: ''
+      question: 'Which browsers support the web app?',
+      answer: 'Modern Chromium-based browsers (Chrome, Edge, Brave) and recent Safari/Firefox versions. For the best experience, use the Android app or Chrome on desktop/mobile.'
     },
     {
       question: 'How difficult are these DIY projects?',
-      answer: ''
+      answer: 'Beginner to intermediate. If you can flash an ESP8266 and edit WiFi credentials, you can build a working PayNet device in under an hour.'
     },
     {
       question: 'What\'s the typical cost to build a DIY payment device?',
-      answer: ''
+      answer: 'Roughly $10–$25 for an ESP8266 board plus optional peripherals (relay, NFC tag, enclosure).'
     },
     {
       question: 'Are the tutorials and code examples free?',
-      answer: ''
+      answer: 'Yes. All guides and reference code are open source and free to use for personal or commercial projects.'
     }
   ];
 
