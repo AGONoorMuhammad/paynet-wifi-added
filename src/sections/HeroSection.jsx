@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function HeroSection() {
+  const navigate = useNavigate();
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -17,7 +19,7 @@ function HeroSection() {
                 <p>PayNet is a payment protocol for HTTPS payments. This project enables PayNet over WiFi with tap to pay. Accept USDC payments from mobile and web apps using your existing WiFi network.</p>
 
                 <div className='hero-buttons'>
-                <a href='/app' className='hero-btn hero-btn-white'>Launch App</a>
+                <a href='/app' className='hero-btn hero-btn-white' onClick={(e) => { e.preventDefault(); navigate('/app'); }}>Launch App</a>
                 <a href='#' onClick={(e) => { e.preventDefault(); scrollToSection('tokenomics'); }} className='hero-btn hero-btn-dark'>Token & Roadmap</a>
                 <a href='#' className='hero-btn hero-btn-dark'>Download Android APK</a>
                 </div>
